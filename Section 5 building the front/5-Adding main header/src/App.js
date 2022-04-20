@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Redirect,Switch} from "react-router-dom"
 
 import Users from './user/pages/Users';
 import NewPlace from './places/pages/NewPlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const  App=()=> {
 
@@ -11,6 +12,11 @@ const  App=()=> {
   return (
   <Router>
 
+{/* MainHeaderu fiind mereu vizibil no o sa ii facem o ruta */}
+<MainNavigation/>
+
+
+<main>
   {/* cu switch specificam ca atunci cand gaseste o ruta catre un component nu o sa mai evaluze celelte rute */}
   <Switch>
 
@@ -27,7 +33,7 @@ const  App=()=> {
     {/* asa specificam daca introducem alt destin sa ne reirectioneze la ruta / */}
     <Redirect to="/"/>
 </Switch>
-   
+   </main>
   </Router>
   )
 }
